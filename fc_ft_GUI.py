@@ -31,8 +31,8 @@ with ic2:
 with ic3:
     cca = st.number_input("**Ceramic coarse aggregate [kg/m$^3$]:**", min_value=0.0, max_value=32.13, step=1.0, value=12.85)
     cca_spec_gr = st.number_input("**Ceramic coarse aggregate specific gravity:**", min_value = 0.0, max_value = 2.0, step = 0.1, value = 1.9)
-    cca_abs_cap = st.number_input("**Ceramic coarse aggregate Absorption Capacity [%]:**", min_value=0.0, max_value = 14.23, step = 0.2, value = 14)
-    cca_dens = st.number_input("**Ceramic coarse aggregate density [kg/m$^3$]:**", min_value=0.0, max_value = 1114.15, step = 100.0, value = 1114)
+    cca_abs_cap = st.number_input("**Ceramic coarse aggregate Absorption Capacity [%]:**", min_value=0.0, max_value = 14.23, step = 0.2, value = 14.0)
+    cca_dens = st.number_input("**Ceramic coarse aggregate density [kg/m$^3$]:**", min_value=0.0, max_value = 1114.15, step = 100.0, value = 1114.0)
 
 new_sample=np.array([[w_c, nca, cca_fine_mod, cca_dens, cca_abs_cap, cca_spec_gr, cca, cca_rep_perc, cfa_mean_part_size, cfa, cfa_rep_perc, nfa, age]],dtype=object)
 
