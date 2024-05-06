@@ -24,7 +24,7 @@ with ic1:
     cfa = st.number_input("**Ceramic fine aggregate [kg\/m^3]:**", min_value=0.0, max_value=9.13, step=1.0, value=4.5)
     cca_fine_mod = st.number_input("**Ceramic coarse aggregate fineness modulus:**", min_value=0.0, max_value=5.5, step=0.5, value=5.5)
 with ic2:
-    cfa_mean_part_size = st.number_input("**Ceramic fine aggregate mean part. size [\mu m]:**", min_value=0.2, max_value=3.0, step=0.1, value=0.3)
+    cfa_mean_part_size = st.number_input("**Ceramic fine aggregate mean part. size [$\mu$ m]:**", min_value=0.2, max_value=3.0, step=0.1, value=0.3)
     nfa=st.number_input("**Natural fine aggregate [kg\/m^3]:**", min_value=30.0, max_value=50.0, step=1.0, value=40.0)
     cfa_rep_perc = st.number_input("**Ceramic fine aggregate replacement percentage [%]**", min_value=0.0, max_value=20.0, step=1.0, value=10.0)
     cca_rep_perc = st.number_input("**Ceramic coarse aggregate replacement percentage [%]**", min_value=0.0, max_value=50.0, value=5.0, step=10.0)
