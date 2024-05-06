@@ -35,7 +35,7 @@ with ic3:
     cca_dens = st.number_input("**Ceramic coarse aggregate density [kg/m$^3$]:**", min_value=0.0, max_value = 1114.15, step = 100.0, value = 1114.0)
 
 new_sample=np.array([[w_c, nca, cca_fine_mod, cca_dens, cca_abs_cap, cca_spec_gr, cca, cca_rep_perc, cfa_mean_part_size, cfa, cfa_rep_perc, nfa, age]],dtype=object)
-new_sample=pd.DataFrame(new_sample, columns=x_c.columns)#experimental
+new_sample=pd.DataFrame(new_sample, columns=df_c.columns[:-1])#experimental
 new_sample_c=scaler_c.transform(new_sample);
 new_sample_t=scaler_t.transform(new_sample);
 if model_selector=="LightGBM":
