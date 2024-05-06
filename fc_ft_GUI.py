@@ -49,9 +49,9 @@ elif model_selector=="XGBoost":
     model_t=XGBRegressor(random_state=0)
     model_t.fit(x_t, y_t)
 if model_selector=="CatBoost":
-    model_c=CatBoostRegressor(random_state=0, verbose=-1)
+    model_c=CatBoostRegressor(random_state=0, verbose=0)
     model_c.fit(x_c,y_c)
-    model_t=CatBoostRegressor(random_state=0, verbose=-1)
+    model_t=CatBoostRegressor(random_state=0, verbose=0)
     model_t.fit(x_t,y_t)
 elif model_selector=="Extra Trees":
     model_c=ExtraTreesRegressor(random_state=0)
