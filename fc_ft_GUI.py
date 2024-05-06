@@ -14,7 +14,7 @@ df_c = pd.read_csv(url_c);df_t=pd.read_csv(url_t);
 x_c, y_c = df_c.iloc[:, :-1], df_c.iloc[:, -1]
 x_t, y_t = df_t.iloc[:, :-1], df_t.iloc[:, -1]
 scaler_c = MinMaxScaler();scaler_t = MinMaxScaler();
-#x_c=scaler_c.fit_transform(x_c);x_t=scaler_t.fit_transform(x_t);
+x_c=scaler_c.fit_transform(x_c);x_t=scaler_t.fit_transform(x_t);
 input_container = st.container()
 ic1,ic2,ic3 = input_container.columns(3)
 with ic1:
@@ -35,7 +35,8 @@ with ic3:
     cca_dens = st.number_input("**Ceramic coarse aggregate density [kg/m$^3$]:**", min_value=0.0, max_value = 1114.15, step = 100.0, value = 1114.0)
 
 new_sample=np.array([[w_c, nca, cca_fine_mod, cca_dens, cca_abs_cap, cca_spec_gr, cca, cca_rep_perc, cfa_mean_part_size, cfa, cfa_rep_perc, nfa, age]],dtype=object)
-
+new_sample_c=scaler_c.transform(new_sample);
+new_sample_t=scaler_t.transform(new_sample);
 if model_selector=="LightGBM":
     model_c=LGBMRegressor(random_state=0, verbose=-1)
     model_c.fit(x_c,y_c)
@@ -58,7 +59,9 @@ elif model_selector=="Extra Trees":
     model_t.fit(x_t, y_t)
 
 with ic2:
-    st.write(f":blue[**Compressive strength = **{model_c.predict(new_sample)[0]:.3f}** MPa**]\n")
+    #st.write(f":blue[**Compressive strength = **{model_c.predict(new_sample)[0]:.3f}** MPa**]\n")
+    st.write(f":blue[**Compressive strength = **{model_c.predict(new_sample_c)[0]:.3f}** MPa**]\n")
     
 with ic3:
-    st.write(f":blue[**Tensile strength = **{model_t.predict(new_sample)[0]:.3f}** MPa**]\n")
+    #st.write(f":blue[**Tensile strength = **{model_t.predict(new_sample)[0]:.3f}** MPa**]\n")
+    st.write(f":blue[**Tensile strength = **{model_t.predict(new_sample_t)[0]:.3f}** MPa**]\n")
