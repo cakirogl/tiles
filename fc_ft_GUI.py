@@ -19,7 +19,7 @@ input_container = st.container()
 ic1,ic2,ic3 = input_container.columns(3)
 with ic1:
     age = st.number_input("**Hydration age [days]:**",min_value=14.0,max_value=60.0,step=1.0,value=28.0)
-    nca = st.number_input("**Natural coarse aggregate [kg\/m^3]]:**",min_value=32,max_value=65,step = 1.0,value=0.25)
+    nca = st.number_input("**Natural coarse aggregate [kg/m3]]:**",min_value=32,max_value=65,step = 1.0,value=0.25)
     w_c = st.number_input("**Water to cement ratio**", min_value=0.4, max_value=0.45, step=0.01, value=0.4)
     cfa = st.number_input("**Ceramic fine aggregate [kg\/m^3]:**", min_value=0.0, max_value=9.13, step=1.0, value=4.5)
     cca_fine_mod = st.number_input("**Ceramic coarse aggregate fineness modulus:**", min_value=0.0, max_value=5.5, step=0.5, value=5.5)
