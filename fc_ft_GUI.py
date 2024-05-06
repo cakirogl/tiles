@@ -61,4 +61,4 @@ with ic2:
     st.write(f":blue[**Compressive strength = **{model_c.predict(new_sample)[0]:.3f}** MPa**]\n")
     
 with ic3:
-    st.write(f"**Tensile strength = **{model_t.predict(new_sample)[0]:.3f}** MPa**\n")
+    st.write(f":blue[**Tensile strength = **{model_t.predict(new_sample)[0]:.3f}** MPa**]\n")
