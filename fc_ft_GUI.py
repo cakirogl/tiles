@@ -57,6 +57,8 @@ elif model_selector=="Extra Trees":
     model_t=ExtraTreesRegressor(random_state=0)
     model_t.fit(x_t, y_t)
 
-with ic3:
+with ic2:
     st.write(f"**Compressive strength = **{model_c.predict(new_sample)[0]:.3f}** MPa**\n")
+    
+with ic3:
     st.write(f"**Tensile strength = **{model_t.predict(new_sample)[0]:.3f}** MPa**\n")
